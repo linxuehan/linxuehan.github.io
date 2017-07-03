@@ -1,12 +1,323 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search>
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="html5Storage," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="SessionStorageSessionStorage只在本地存储，关闭浏览器后自动删除，存储大小可以达到5M或更大。 兼容性http://caniuse.com/#search=sessionstorage API1234567891011121314// 判断是否支持const sessionStorage = window.sessionStorage;if (typeof session">
+<meta name="keywords" content="html5Storage">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C端存储API">
+<meta property="og:url" content="https://linxuehan.github.io/2017/07/03/C端存储API/index.html">
+<meta property="og:site_name" content="Linxuehan&#39;s Blog">
+<meta property="og:description" content="SessionStorageSessionStorage只在本地存储，关闭浏览器后自动删除，存储大小可以达到5M或更大。 兼容性http://caniuse.com/#search=sessionstorage API1234567891011121314// 判断是否支持const sessionStorage = window.sessionStorage;if (typeof session">
+<meta property="og:image" content="https://linxuehan.github.io/image/responseSetCookie.png">
+<meta property="og:image" content="https://linxuehan.github.io/image/sessionCookie.png">
+<meta property="og:image" content="https://linxuehan.github.io/image/httpOnlyCookie.png">
+<meta property="og:image" content="https://linxuehan.github.io/image/indexedDB.png">
+<meta property="og:image" content="https://linxuehan.github.io/image/indexedDBSuccess.png">
+<meta property="og:image" content="https://linxuehan.github.io/image/indexedDBData.png">
+<meta property="og:updated_time" content="2017-07-03T08:53:26.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C端存储API">
+<meta name="twitter:description" content="SessionStorageSessionStorage只在本地存储，关闭浏览器后自动删除，存储大小可以达到5M或更大。 兼容性http://caniuse.com/#search=sessionstorage API1234567891011121314// 判断是否支持const sessionStorage = window.sessionStorage;if (typeof session">
+<meta name="twitter:image" content="https://linxuehan.github.io/image/responseSetCookie.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"right","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="https://linxuehan.github.io/2017/07/03/C端存储API/"/>
+
+  <title> C端存储API | Linxuehan's Blog </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
   
   
     
-    <entry>
-      <title><![CDATA[C端存储API]]></title>
-      <url>https://linxuehan.github.io/2017/07/03/C%E7%AB%AF%E5%AD%98%E5%82%A8API/</url>
-      <content type="html"><![CDATA[<h2 id="SessionStorage"><a href="#SessionStorage" class="headerlink" title="SessionStorage"></a>SessionStorage</h2><p><font color="#c7254e">SessionStorage</font>只在本地存储，关闭浏览器后自动删除，存储大小可以达到5M或更大。</p>
+  
+
+  <div class="container one-collumn sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Linxuehan's Blog</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">飓风过岗，伏草惟存</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
+    </div>
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                C端存储API
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-07-03T21:00:11+08:00" content="2017-07-03">
+              2017-07-03
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/存储/" itemprop="url" rel="index">
+                    <span itemprop="name">存储</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2017/07/03/C端存储API/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/07/03/C端存储API/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="SessionStorage"><a href="#SessionStorage" class="headerlink" title="SessionStorage"></a>SessionStorage</h2><p><font color="#c7254e">SessionStorage</font>只在本地存储，关闭浏览器后自动删除，存储大小可以达到5M或更大。</p>
 <h3 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h3><p><a href="http://caniuse.com/#search=sessionstorage" target="_blank" rel="external">http://caniuse.com/#search=sessionstorage</a></p>
 <h3 id="API"><a href="#API" class="headerlink" title="API"></a>API</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 判断是否支持</span></div><div class="line"><span class="keyword">const</span> sessionStorage = <span class="built_in">window</span>.sessionStorage;</div><div class="line"><span class="keyword">if</span> (<span class="keyword">typeof</span> sessionStorage !== <span class="literal">undefined</span>) &#123;</div><div class="line">  <span class="comment">// 存储</span></div><div class="line">  sessionStorage.setItem(<span class="string">'key'</span>, <span class="string">'value'</span>);</div><div class="line">  <span class="comment">// 查询</span></div><div class="line">  sessionStorage.getItem(<span class="string">'key'</span>);</div><div class="line">  <span class="comment">// 删除</span></div><div class="line">  sessionStorage.removeItem(<span class="string">'key'</span>);</div><div class="line">  <span class="comment">// 清除存储</span></div><div class="line">  sessionStorage.clear();</div><div class="line">  <span class="comment">// 长度</span></div><div class="line">  sessionStorage.length;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="LocalStorage"><a href="#LocalStorage" class="headerlink" title="LocalStorage"></a>LocalStorage</h2><p><font color="#c7254e">LocalStorage</font>只在本地存储，关闭浏览器后不会自动删除，需要手动删除存储数据，存储大小在2.5M到10M之间，各个浏览器大小不同。操作是同步。</p>
@@ -157,218 +468,473 @@
 <p>  api很复杂，完整示例：</p>
   <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">  <span class="keyword">let</span> db = <span class="literal">null</span>;</div><div class="line"><span class="keyword">if</span> (<span class="string">'indexedDB'</span> <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</div><div class="line">    <span class="keyword">const</span> version = <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">10000</span>);</div><div class="line">    <span class="built_in">console</span>.log(version);</div><div class="line">    <span class="keyword">const</span> dbRequest = <span class="built_in">window</span>.indexedDB.open(<span class="string">'myDB'</span>, version);</div><div class="line">    dbRequest.onsuccess = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        db = e.target.result;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'open success'</span>, e);</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    dbRequest.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'open error'</span>, e);</div><div class="line">    &#125;;</div><div class="line">    dbRequest.onupgradeneeded = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="string">'open onupgradeneeded'</span>, e);</div><div class="line">        db = e.target.result;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (!db.objectStoreNames.contains(<span class="string">'user'</span>)) &#123;</div><div class="line">            db.createObjectStore(<span class="string">'user'</span>, &#123; <span class="attr">keyPath</span>: <span class="string">'userId'</span> &#125;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">if</span> (!db.objectStoreNames.contains(<span class="string">'operate'</span>)) &#123;</div><div class="line">            db.createObjectStore(<span class="string">'operate'</span>, &#123; <span class="attr">autoIncrement</span>: <span class="literal">true</span> &#125;);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">const</span> transaction = event.target.transaction;</div><div class="line"></div><div class="line">        <span class="keyword">const</span> userStore = transaction.objectStore(<span class="string">'user'</span>);</div><div class="line"></div><div class="line">        <span class="keyword">const</span> storeRequest = userStore.add(&#123;</div><div class="line">            <span class="attr">userId</span>: <span class="number">1</span>,</div><div class="line">            <span class="attr">userName</span>: <span class="string">'name'</span></div><div class="line">        &#125;);</div><div class="line"></div><div class="line">        storeRequest.onsuccess = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'add onsuccess'</span>, event);</div><div class="line">        &#125;;</div><div class="line">        storeRequest.onerror = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="string">'add onerror'</span>, event);</div><div class="line">        &#125;;</div><div class="line">    &#125;;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
 <p>  浏览器中可以查看数据：<br>  <img src="/image/indexedDBData.png" alt="img"></p>
-]]></content>
+
       
-        <categories>
-            
-            <category> 存储 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> html5Storage </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[《写给大家看的设计书》读书笔记]]></title>
-      <url>https://linxuehan.github.io/2017/07/03/%E3%80%8A%E5%86%99%E7%BB%99%E5%A4%A7%E5%AE%B6%E7%9C%8B%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B9%A6%E3%80%8B-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
-      <content type="html"><![CDATA[<h2 id="四大原则"><a href="#四大原则" class="headerlink" title="四大原则"></a>四大原则</h2><ol>
-<li>对比（contrast）</li>
-<li>重复（repetition）</li>
-<li>对齐（alignment）</li>
-<li>亲密性（proximity）</li>
-</ol>
-<hr>
-<h2 id="亲密性"><a href="#亲密性" class="headerlink" title="亲密性"></a>亲密性</h2><p>将相关的项组织在一起。目的是实现组织性。</p>
-<blockquote>
-<p>注意：</p>
-<ul>
-<li>不能因为有空白将元素放在角落或中央</li>
-<li>避免页面有太多孤立元素</li>
-<li>不要在元素之间留出相同大小空白，除非各组同属一个子集</li>
-<li>不同组元素不要建立关系</li>
-</ul>
-</blockquote>
-<h2 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h2><p>任何元素都不能在页面上随意放置，每一项都应当与页面上某个内容存在某种视觉联系。目的是使页面统一而有条理。</p>
-<h3 id="初步要求"><a href="#初步要求" class="headerlink" title="初步要求"></a>初步要求</h3><p>页面上只使用一种文本对齐：所有文案都左对齐，右对齐或居中对齐</p>
-<h3 id="打破对齐"><a href="#打破对齐" class="headerlink" title="打破对齐"></a>打破对齐</h3><p>有意识的打破对齐也需要确保符合一定的规则，在打破规则时清楚规则</p>
-<h2 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h2><p>设计的某些方面需要在整个作品中重复。使用重复目的是统一，并增强视觉效果。</p>
-<blockquote>
-<p>注意：</p>
-<ul>
-<li>采用多样性实现统一。</li>
-<li>避免太多重复一个元素。</li>
-</ul>
-</blockquote>
-<h2 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h2><p>如果两个项不完全相同，就应当使之不同，而且应当是截然不同。使用对比目的是增加页面的效果。</p>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>使用字体选择、线宽、颜色、形状、大小、空间等来增加对比。</p>
-<hr>
-<h2 id="颜色运用"><a href="#颜色运用" class="headerlink" title="颜色运用"></a>颜色运用</h2><p><img src="/image/colorCircle.png" alt="img"></p>
-<h3 id="三原色"><a href="#三原色" class="headerlink" title="三原色"></a>三原色</h3><p>红、黄、蓝</p>
-<h4 id="三色组"><a href="#三色组" class="headerlink" title="三色组"></a>三色组</h4><p>色轮上彼此等距离的三种颜色组成三色组。</p>
-<p><img src="/image/threeColor.png" alt="img"></p>
-<h4 id="分裂互补色"><a href="#分裂互补色" class="headerlink" title="分裂互补色"></a>分裂互补色</h4><p>从色轮上选择一种颜色，选择等距离的两种颜色两侧的颜色。</p>
-<p><img src="/image/complementColor.png" alt="img"></p>
-<h4 id="类似色"><a href="#类似色" class="headerlink" title="类似色"></a>类似色</h4><p>由色轮上彼此相邻的颜色组成。</p>
-<p><img src="/image/similarColor.png" alt="img"></p>
-<h3 id="暗色和亮色"><a href="#暗色和亮色" class="headerlink" title="暗色和亮色"></a>暗色和亮色</h3><ul>
-<li>纯色就是色调（hue）</li>
-<li>色调增加黑色构成暗色（shade）</li>
-<li>色调增加白色构成亮色（tint）</li>
-</ul>
-<p><img src="/image/darkLightColor.png" alt="img"></p>
-<h4 id="单色"><a href="#单色" class="headerlink" title="单色"></a>单色</h4><p>单色组合：由一种色调以及其相应的多种亮色和暗色组成。</p>
-<h4 id="色质"><a href="#色质" class="headerlink" title="色质"></a>色质</h4><p>色质：某种颜色的特定名单独、深浅度或色调。</p>
-<h3 id="暖色和冷色"><a href="#暖色和冷色" class="headerlink" title="暖色和冷色"></a>暖色和冷色</h3><p>暖色：如：红色、黄色，趋进型。<br>冷色：如：蓝色，后退型。</p>
-<blockquote>
-<p>注意：</p>
-<ul>
-<li>不要让冷暖色太多均衡</li>
-</ul>
-</blockquote>
-<h3 id="CMYK与RGB，印刷与Web"><a href="#CMYK与RGB，印刷与Web" class="headerlink" title="CMYK与RGB，印刷与Web"></a>CMYK与RGB，印刷与Web</h3><h4 id="CMYK"><a href="#CMYK" class="headerlink" title="CMYK"></a>CMYK</h4><p>  CMYK代表cyan，magenta，yellow和一个key（通常是黑色）。利用这4中墨色，可以打印出千万种颜色。</p>
-<h4 id="RGB"><a href="#RGB" class="headerlink" title="RGB"></a>RGB</h4><p>  RGB表示red，green和blue。混合red和green可以得到yellow。混合所有颜色可以得到白色，去掉所有颜色得到黑色。</p>
-<ul>
-<li>red：<font color="#f00">#f00</font></li>
-<li>yellow: <font color="#ff0">#ff0</font></li>
-<li>green: <font color="#0f0">#0f0</font></li>
-<li>blue: <font color="#00f">#00f</font></li>
-<li>white: <font color="#fff">#fff</font></li>
-<li>black: <font color="#000">#000</font></li>
-</ul>
-<blockquote>
-<p>注意：</p>
-<ul>
-<li>需要印刷的项目应当使用CMYK</li>
-<li>web项目使用RGB</li>
-</ul>
-</blockquote>
-<hr>
-<h2 id="技巧"><a href="#技巧" class="headerlink" title="技巧"></a>技巧</h2><h3 id="创建包装"><a href="#创建包装" class="headerlink" title="创建包装"></a>创建包装</h3><p>每一件作品中都必须有某个标识性图像或某种标识行风格。</p>
-<h3 id="企业名片"><a href="#企业名片" class="headerlink" title="企业名片"></a>企业名片</h3><p>除了主色外，如果使用了第二种颜色（辅助色），则用量一定要少。</p>
-<h3 id="信笺和信封"><a href="#信笺和信封" class="headerlink" title="信笺和信封"></a>信笺和信封</h3><p>使用和企业名片相同的布局，避免使用括号、缩写以及会增加混乱的多余的词。</p>
-<h3 id="传单"><a href="#传单" class="headerlink" title="传单"></a>传单</h3><p>可以使用有趣的字体和夸张的对比。</p>
-<p>步骤：</p>
-<ul>
-<li>创建中心点：视觉中心点</li>
-<li>使用有对比的子标题</li>
-<li>重复</li>
-<li>对齐</li>
-</ul>
-<h3 id="新闻简报"><a href="#新闻简报" class="headerlink" title="新闻简报"></a>新闻简报</h3><p>标题鲜明，每一页内容布局一致。</p>
-<h3 id="宣传册"><a href="#宣传册" class="headerlink" title="宣传册"></a>宣传册</h3><p>每一页都有明确的对齐线。内容需要逐步吸引读者，需要有对比性。</p>
-<h3 id="明信片"><a href="#明信片" class="headerlink" title="明信片"></a>明信片</h3><ul>
-<li>与众不同</li>
-<li>成“系列”</li>
-<li>明确具体</li>
-<li>力求简练</li>
-<li>尽可能使用颜色</li>
-</ul>
-<h3 id="报纸广告"><a href="#报纸广告" class="headerlink" title="报纸广告"></a>报纸广告</h3><ul>
-<li>空白</li>
-<li>机敏</li>
-<li>清楚</li>
-<li>简洁</li>
-<li>尽可能使用颜色</li>
-</ul>
-<h3 id="网站"><a href="#网站" class="headerlink" title="网站"></a>网站</h3><ul>
-<li>重复：每一个页面重复某些视觉元素</li>
-<li>可读性：行宽要短</li>
-</ul>
-<hr>
-<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p>字体对比：大小、粗细、颜色、结构、形状、方向。</p>
-<ul>
-<li><strong>协调</strong><br>只使用一种字体。</li>
-<li><strong>冲突</strong><br>使用两种或多个类似字体，它们并非完全不同，但是也不完全相同，这个设计就是冲突的。</li>
-<li><strong>对比</strong><br>使用多种完全不同的字体。</li>
-</ul>
-<h2 id="字体类别"><a href="#字体类别" class="headerlink" title="字体类别"></a>字体类别</h2><h3 id="oldstyle"><a href="#oldstyle" class="headerlink" title="oldstyle"></a>oldstyle</h3><p>  基于手写体创建的，有粗/细过渡和一条对角强调线。<br>  <img src="/image/oldStyle.png" alt="img"></p>
-<h3 id="modern"><a href="#modern" class="headerlink" title="modern"></a>modern</h3><p>  有有水平截线，强烈的粗/细过渡和垂直的强调线。<br>  <img src="/image/modern.png" alt="img"></p>
-<h3 id="slab-serif"><a href="#slab-serif" class="headerlink" title="slab serif"></a>slab serif</h3><p>  也称为clarendon，egyptian，因为是在古埃及文明发展期间盛起，很多都有一个埃及名。粗/细过渡很小甚至没有。<br>简洁，可读性较好。<br><img src="/image/slabSerif.png" alt="img"></p>
-<h3 id="sans-serif"><a href="#sans-serif" class="headerlink" title="sans serif"></a>sans serif</h3><p>  无截线，无可见粗/细过渡。</p>
-<p>  <img src="/image/sansSerif.png" alt="img"></p>
-<h3 id="script"><a href="#script" class="headerlink" title="script"></a>script</h3><p>  利用书法笔或书法刷手写的所有字体都是Script类字体。<br>  <img src="/image/script.png" alt="img"></p>
-<h3 id="decorative"><a href="#decorative" class="headerlink" title="decorative"></a>decorative</h3><p>  <img src="/image/decorative.png" alt="img"></p>
-<h3 id="使用原则"><a href="#使用原则" class="headerlink" title="使用原则:"></a>使用原则:</h3><ul>
-<li>不要把同一个类别中的两种字体放在同一个页面上。</li>
-<li>永远不要使用全大写</li>
-</ul>
-<p><img src="/image/fontRule.png" alt="img"></p>
-<h3 id="设计过程"><a href="#设计过程" class="headerlink" title="设计过程"></a>设计过程</h3><ul>
-<li><h4 id="从中心点开始"><a href="#从中心点开始" class="headerlink" title="从中心点开始"></a>从中心点开始</h4>确定用户最先看什么。</li>
-<li><h4 id="将信息分组"><a href="#将信息分组" class="headerlink" title="将信息分组"></a>将信息分组</h4>按逻辑进行分组，确定这些组之间的关系。</li>
-<li><h4 id="创建重复"><a href="#创建重复" class="headerlink" title="创建重复"></a>创建重复</h4>找出可以重复的项，可以使用粗字体<br>线、装饰符号或某些空间布局。</li>
-</ul>
-]]></content>
-      
-        <categories>
-            
-            <category> 读书笔记 </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> 设计 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>https://linxuehan.github.io/2016/09/02/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
+    </div>
+
+    <div>
       
         
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Git 笔记]]></title>
-      <url>https://linxuehan.github.io/2016/08/27/Git-%E7%AC%94%E8%AE%B0/</url>
-      <content type="html"><![CDATA[<p>git常用操作笔记。</p>
-<h3 id="1、设置用户名和邮箱"><a href="#1、设置用户名和邮箱" class="headerlink" title="1、设置用户名和邮箱"></a>1、设置用户名和邮箱</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"John Doe"</span></div><div class="line">git config --global user.email johndoe@example.com</div><div class="line"></div><div class="line">git config --<span class="built_in">local</span> user.name <span class="string">'local username'</span></div><div class="line">git config --<span class="built_in">local</span> user.email <span class="string">'local email'</span></div><div class="line"></div><div class="line">// 查看配置</div><div class="line">git config -e</div><div class="line">git config -e --global</div><div class="line">git config -e --system</div></pre></td></tr></table></figure>
-<h3 id="2、设置别名"><a href="#2、设置别名" class="headerlink" title="2、设置别名"></a>2、设置别名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">git config --global alias.co checkout</div><div class="line">git config --global alias.br branch</div><div class="line">git config --global alias.ci commit</div><div class="line">git config --global alias.st status</div><div class="line">git config --global alias.last <span class="string">'log -l HEAD'</span></div><div class="line">git config --global alias.unstage <span class="string">'reset HEAD --'</span></div><div class="line">/*</div><div class="line">* git add newFileName</div><div class="line">* git unstage newFileName</div><div class="line">/</div><div class="line">git config --global alias.reset <span class="string">'reset --hard'</span></div></pre></td></tr></table></figure>
-<h3 id="3、创建、修改和合并分支"><a href="#3、创建、修改和合并分支" class="headerlink" title="3、创建、修改和合并分支"></a>3、创建、修改和合并分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">// 获取分支</div><div class="line">git <span class="built_in">clone</span> ssh://git@git.sankuai.com/fe/fe.meishi.special.git</div><div class="line">git pull</div><div class="line"></div><div class="line">// 创建分支</div><div class="line">git co -b newBranch</div><div class="line">// 提交修改</div><div class="line">git ci -am <span class="string">'commit'</span></div><div class="line">// 推送分支</div><div class="line">git push origin newBranch</div><div class="line">// 合并分支</div><div class="line">git merge otherBranch</div><div class="line">// 删除本地分支</div><div class="line">git branch -D branchName</div><div class="line">// 删除远程分支</div><div class="line">git push origin :remoteBrancName</div><div class="line">// 修改分支origin</div><div class="line">git branch -u origin/master</div></pre></td></tr></table></figure>
-<h3 id="4、回滚"><a href="#4、回滚" class="headerlink" title="4、回滚"></a>4、回滚</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 回滚所有记录</div><div class="line">git reset --hard HEAD</div><div class="line">// 回滚到某次提交</div><div class="line">git <span class="built_in">log</span></div><div class="line">git reset --hard commitHash</div><div class="line">//  取消缓存新文件</div><div class="line">git add newFile</div><div class="line">git reset HEAD -- newFileName</div></pre></td></tr></table></figure>
-<h3 id="5、代码diff"><a href="#5、代码diff" class="headerlink" title="5、代码diff"></a>5、代码diff</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// commit之前对比</div><div class="line">git diff</div><div class="line">//  git add 之后，commit之前</div><div class="line">git diff --cachedgit diff HEAD</div><div class="line">// 对比某个文件</div><div class="line">git diff branchName fileName</div><div class="line">// 对比分支</div><div class="line">git diff branchName</div><div class="line">git diff branchName otherBranch</div></pre></td></tr></table></figure>
-<h3 id="6、整理提交记录"><a href="#6、整理提交记录" class="headerlink" title="6、整理提交记录"></a>6、整理提交记录</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git co oldBranch</div><div class="line">git ci -am <span class="string">'commit'</span></div><div class="line">...</div><div class="line">git co master</div><div class="line">git co -b newBranch</div><div class="line">git merge --squash oldBranch</div></pre></td></tr></table></figure>
-<h3 id="7、远程代码仓库操作"><a href="#7、远程代码仓库操作" class="headerlink" title="7、远程代码仓库操作"></a>7、远程代码仓库操作</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// 查看远程代码仓库(别名+仓库地址)</div><div class="line">git remote -v</div><div class="line">// 添加远程代码仓库</div><div class="line">git remote add remoteAlias remoteLink</div><div class="line">// 拉取远程分支</div><div class="line">git fetch remoteAlias</div><div class="line">// 删除远程代码仓库</div><div class="line">git remote remove remoteAlias</div><div class="line">// 重命名</div><div class="line">git remote rename remoteAlias newAlias</div><div class="line">// 修改远程代码仓库地址</div><div class="line">git remote <span class="built_in">set</span>-url origin newRemoteLink</div></pre></td></tr></table></figure>
-<h3 id="8、查询提交历史"><a href="#8、查询提交历史" class="headerlink" title="8、查询提交历史"></a>8、查询提交历史</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 查询关键字所在文件</div><div class="line">git grep <span class="string">'keyword'</span></div><div class="line">// 查询提交记录</div><div class="line">git blame -L 20,23 fileName</div><div class="line">git blame -L 20,+10 fileName</div><div class="line">git blame --since=3.weeks -- foo</div></pre></td></tr></table></figure>
-<h3 id="9、添加submodule"><a href="#9、添加submodule" class="headerlink" title="9、添加submodule"></a>9、添加submodule</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">// 当前git项目根目录</div><div class="line">git submodule add [submodule ssh]  dir/subModule</div><div class="line">// 根目录下会生成.gitsubmodule文件</div><div class="line"> cat .gitmodule</div><div class="line">// 进入submodule目录</div><div class="line"><span class="built_in">cd</span> dir/subModule</div><div class="line">// 查看远程仓库信息，和主分支相同</div><div class="line">git remote -v</div><div class="line">// 初始化submodule</div><div class="line">git submodule init</div><div class="line">// 更新submodule</div><div class="line">git submodule update</div><div class="line">// 修改submodule文件，保存步骤</div><div class="line"><span class="built_in">cd</span>  dir/subModule</div><div class="line">git add --all</div><div class="line">git ci -am <span class="string">'edit submodule'</span></div><div class="line">// 回到根目录</div><div class="line"><span class="built_in">cd</span> ../..</div><div class="line">git st</div><div class="line">git ci -am <span class="string">'commit'</span></div></pre></td></tr></table></figure>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://git-scm.com/book/en/v2" target="_blank" rel="external">git book</a></p>
-]]></content>
+
       
-        <categories>
-            
-            <category> 开发工具 </category>
-            
-        </categories>
+    </div>
+
+    <div>
+      
         
-        
-        <tags>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/html5Storage/" rel="tag">#html5Storage</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-            <tag> git </tag>
+              <a href="/2017/07/03/《写给大家看的设计书》-读书笔记/" rel="next" title="《写给大家看的设计书》读书笔记">
+                <i class="fa fa-chevron-left"></i> 《写给大家看的设计书》读书笔记
+              </a>
             
-        </tags>
-        
-    </entry>
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
     
+      <div class="ds-thread" data-thread-key="2017/07/03/C端存储API/"
+           data-title="C端存储API" data-url="https://linxuehan.github.io/2017/07/03/C端存储API/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpeg"
+               alt="linxuehan" />
+          <p class="site-author-name" itemprop="name">linxuehan</p>
+          <p class="site-description motion-element" itemprop="description">不畏将来，不念过往</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://theme-next.iissnan.com/" title="NexT" target="_blank">NexT</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://html5ify.com/fks/" title="前端资源汇总" target="_blank">前端资源汇总</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://blog.xcatliu.com/" title="xcatliu" target="_blank">xcatliu</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="http://zhenhua-lee.github.io/" title="前端之路" target="_blank">前端之路</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SessionStorage"><span class="nav-number">1.</span> <span class="nav-text">SessionStorage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容性"><span class="nav-number">1.1.</span> <span class="nav-text">兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API"><span class="nav-number">1.2.</span> <span class="nav-text">API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LocalStorage"><span class="nav-number">2.</span> <span class="nav-text">LocalStorage</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容性-1"><span class="nav-number">2.1.</span> <span class="nav-text">兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API-1"><span class="nav-number">2.2.</span> <span class="nav-text">API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie"><span class="nav-number">3.</span> <span class="nav-text">Cookie</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#属性"><span class="nav-number">3.1.</span> <span class="nav-text">属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Web-SQL"><span class="nav-number">4.</span> <span class="nav-text">Web SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#兼容性-2"><span class="nav-number">4.1.</span> <span class="nav-text">兼容性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API-2"><span class="nav-number">4.2.</span> <span class="nav-text">API</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IndexedDB"><span class="nav-number">5.</span> <span class="nav-text">IndexedDB</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特点"><span class="nav-number">5.1.</span> <span class="nav-text">特点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#API-3"><span class="nav-number">5.2.</span> <span class="nav-text">API</span></a></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2015 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">linxuehan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
   
   
-</search>
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/2.7-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+  
+
+  
+
+</body>
+</html>

@@ -58,19 +58,17 @@
 
 
 
-<meta name="description" content="git常用操作笔记。
-1、设置用户名和邮箱12345678910git config --global user.name &quot;John Doe&quot;git config --global user.email johndoe@example.comgit config --local user.name &apos;local username&apos;git config --local user.email &apos;lo">
+<meta name="description" content="git常用操作笔记。 1、设置用户名和邮箱12345678910git config --global user.name &quot;John Doe&quot;git config --global user.email johndoe@example.comgit config --local user.name &apos;local username&apos;git config --local user.email &apos;lo">
+<meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git 笔记">
 <meta property="og:url" content="https://linxuehan.github.io/2016/08/27/Git-笔记/index.html">
-<meta property="og:site_name" content="Linxuehan's Blog">
-<meta property="og:description" content="git常用操作笔记。
-1、设置用户名和邮箱12345678910git config --global user.name &quot;John Doe&quot;git config --global user.email johndoe@example.comgit config --local user.name &apos;local username&apos;git config --local user.email &apos;lo">
+<meta property="og:site_name" content="Linxuehan&#39;s Blog">
+<meta property="og:description" content="git常用操作笔记。 1、设置用户名和邮箱12345678910git config --global user.name &quot;John Doe&quot;git config --global user.email johndoe@example.comgit config --local user.name &apos;local username&apos;git config --local user.email &apos;lo">
 <meta property="og:updated_time" content="2016-09-02T03:31:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 笔记">
-<meta name="twitter:description" content="git常用操作笔记。
-1、设置用户名和邮箱12345678910git config --global user.name &quot;John Doe&quot;git config --global user.email johndoe@example.comgit config --local user.name &apos;local username&apos;git config --local user.email &apos;lo">
+<meta name="twitter:description" content="git常用操作笔记。 1、设置用户名和邮箱12345678910git config --global user.name &quot;John Doe&quot;git config --global user.email johndoe@example.comgit config --local user.name &apos;local username&apos;git config --local user.email &apos;lo">
 
 
 
@@ -313,7 +311,7 @@
 
       
         <p>git常用操作笔记。</p>
-<h3 id="1、设置用户名和邮箱"><a href="#1、设置用户名和邮箱" class="headerlink" title="1、设置用户名和邮箱"></a>1、设置用户名和邮箱</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"John Doe"</span></div><div class="line">git config --global user.email johndoe@example.com</div><div class="line"></div><div class="line">git config --local user.name <span class="string">'local username'</span></div><div class="line">git config --local user.email <span class="string">'local email'</span></div><div class="line"></div><div class="line">// 查看配置</div><div class="line">git config <span class="_">-e</span></div><div class="line">git config <span class="_">-e</span> --global</div><div class="line">git config <span class="_">-e</span> --system</div></pre></td></tr></table></figure>
+<h3 id="1、设置用户名和邮箱"><a href="#1、设置用户名和邮箱" class="headerlink" title="1、设置用户名和邮箱"></a>1、设置用户名和邮箱</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"John Doe"</span></div><div class="line">git config --global user.email johndoe@example.com</div><div class="line"></div><div class="line">git config --<span class="built_in">local</span> user.name <span class="string">'local username'</span></div><div class="line">git config --<span class="built_in">local</span> user.email <span class="string">'local email'</span></div><div class="line"></div><div class="line">// 查看配置</div><div class="line">git config -e</div><div class="line">git config -e --global</div><div class="line">git config -e --system</div></pre></td></tr></table></figure>
 <h3 id="2、设置别名"><a href="#2、设置别名" class="headerlink" title="2、设置别名"></a>2、设置别名</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">git config --global alias.co checkout</div><div class="line">git config --global alias.br branch</div><div class="line">git config --global alias.ci commit</div><div class="line">git config --global alias.st status</div><div class="line">git config --global alias.last <span class="string">'log -l HEAD'</span></div><div class="line">git config --global alias.unstage <span class="string">'reset HEAD --'</span></div><div class="line">/*</div><div class="line">* git add newFileName</div><div class="line">* git unstage newFileName</div><div class="line">/</div><div class="line">git config --global alias.reset <span class="string">'reset --hard'</span></div></pre></td></tr></table></figure>
 <h3 id="3、创建、修改和合并分支"><a href="#3、创建、修改和合并分支" class="headerlink" title="3、创建、修改和合并分支"></a>3、创建、修改和合并分支</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">// 获取分支</div><div class="line">git <span class="built_in">clone</span> ssh://git@git.sankuai.com/fe/fe.meishi.special.git</div><div class="line">git pull</div><div class="line"></div><div class="line">// 创建分支</div><div class="line">git co -b newBranch</div><div class="line">// 提交修改</div><div class="line">git ci -am <span class="string">'commit'</span></div><div class="line">// 推送分支</div><div class="line">git push origin newBranch</div><div class="line">// 合并分支</div><div class="line">git merge otherBranch</div><div class="line">// 删除本地分支</div><div class="line">git branch -D branchName</div><div class="line">// 删除远程分支</div><div class="line">git push origin :remoteBrancName</div><div class="line">// 修改分支origin</div><div class="line">git branch -u origin/master</div></pre></td></tr></table></figure>
 <h3 id="4、回滚"><a href="#4、回滚" class="headerlink" title="4、回滚"></a>4、回滚</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// 回滚所有记录</div><div class="line">git reset --hard HEAD</div><div class="line">// 回滚到某次提交</div><div class="line">git <span class="built_in">log</span></div><div class="line">git reset --hard commitHash</div><div class="line">//  取消缓存新文件</div><div class="line">git add newFile</div><div class="line">git reset HEAD -- newFileName</div></pre></td></tr></table></figure>
@@ -382,9 +380,6 @@
           </div>
           
 
-  <p>热评文章</p>
-  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
-
 
           
   <div class="comments" id="comments">
@@ -435,7 +430,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -443,7 +438,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -452,7 +447,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -526,7 +521,7 @@
         <div class="copyright" >
   
   &copy;  2015 - 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -631,26 +626,6 @@
   
     
   
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"linxuehan"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-    
-    <script src="/vendors/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
-    <script src="/js/src/hook-duoshuo.js"></script>
-  
-
 
 
 
@@ -807,7 +782,7 @@
       }
     });
   </script>
-  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/2.7-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 
 
   
