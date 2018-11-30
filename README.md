@@ -1,2 +1,3 @@
 # linxuehan.github.io
-this is github blog
+
+日常笔记
